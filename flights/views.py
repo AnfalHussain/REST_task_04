@@ -2,7 +2,15 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView, RetrieveUpdate
 from datetime import datetime
 
 from .models import Flight, Booking
-from .serializers import FlightSerializer, BookingSerializer, BookingDetailsSerializer, UpdateBookingSerializer
+from .serializers import ( FlightSerializer, BookingSerializer,
+	BookingDetailsSerializer, UpdateBookingSerializer, UserCreateSerializer )
+
+
+
+
+class RegisterView(CreateAPIView):
+	serializer_class = UserCreateSerializer
+
 
 
 class FlightsList(ListAPIView):
